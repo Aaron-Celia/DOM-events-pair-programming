@@ -11,15 +11,22 @@ cookieButton.addEventListener("click", function(){
 
 // font size change
 let paragraph = document.querySelector("#random-text");
-const magnifyButton = document.querySelector("#magnify");
-const normal = document.querySelector("#normal");
+let magnifyButton = document.querySelector("#increment-up");
+let deMagnify = document.querySelector("#increment-down");
+let counter = 16;
 
 magnifyButton.addEventListener("click", function(){
-    paragraph.style.fontSize = "25px";
+    if (counter < 100){
+        counter++;
+        paragraph.style.fontSize = counter + "px";
+    }
 });
 
-normal.addEventListener("click", function(){
-    paragraph.style.fontSize = "16px";
+deMagnify.addEventListener("click", function(){
+    if (counter > 1){
+        counter--;
+        paragraph.style.fontSize = counter + "px";
+    }
 });
 
 
@@ -72,3 +79,10 @@ rightButton.addEventListener("click", function(){
     crane.className = "right"
 });
 
+
+
+let mouseOver = document.querySelector("#mouseover-title")
+
+mouseOver.addEventListener("mouseover", function(){
+    mouseOver.style.color = "white"
+})
